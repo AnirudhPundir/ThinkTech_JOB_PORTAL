@@ -488,4 +488,21 @@ It tells us about all the stuff which we had done since the last commit.
 
 <Git Log: Viewing & Changing Commits In Git | Git Tutorials #11>
 1. $rm -rf .git  : this command is used for deleting a local git directory.
+2. $git log -p : this command is used seeing all the info related  to commits like 
+   what changes were commited. 
+3.	$git log -3 : will show the last three commits that took place. 
+4. $git log --stat : will show the changes made in the commits the took place in 
+summarized way.
+5. $git log --pretty=oneline : it will show the commits in a single line.
+6.  $gig log --pretty=short : it will show the commit info in short manner.
+7."Author" is the one who creates the file while "Commiter " is the one who creates the
+file.
+8. $git log --since = 2.days : it will the commits that took place since the last 2 days
+9. $git lof --format = "   ": it will show info of commiters , files,commits, authors.
+10. $git commit --amend : it help us to edit a commit message and will tale us to
+a editor.
 </Git Log: Viewing & Changing Commits In Git | Git Tutorials #11>
+<Unstaging & Unmodifying Files In Git | Git Tutorials #12>
+1. $ git restore --staged Git1.txt: it will unstage a file.
+
+</Unstaging & Unmodifying Files In Git | Git Tutorials #12>
