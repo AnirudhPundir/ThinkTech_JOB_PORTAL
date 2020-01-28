@@ -1,0 +1,491 @@
+Q1. What is Git? 
+Ans. It is a version control system.It helps us in keeping track of diff. Updates
+ which we made to our programs at the time of building it. 
+ For Eg. 
+ It we create a website it may have diff types of files inside it like css,html,js,
+ php files in it as websites constitutes of manu different markup,stylesheet,scripting 
+ languages if the boss gives a command to the employees under him/her to make a button 
+ which would perform a certain fuctinality onclick , the firstly the one responsible 
+ for html,css part will creae the button and then the one writes the javascript 
+ will create the function which will be executed once the button clicked is clicked , 
+ but what if there are changes in the plan the  boss ordered the html/css one to create
+ a link instead of a button , in this situation a confusion will occur where pramod never 
+new about the changes and he will point towards rakesh whih acc to never him never did 
+his job hence the task will stuck and the company would face a loss as the site was 
+not launched.
+
+Q2. How Git helps us ?
+Ans. a) It helps us to easily recover the files.
+	 b) when were the changes made to the project and by whom?
+	 c) Rollback to the previos version.
+
+Q3. Local VCS ?
+Ans. Can track files and rollback with DB but cant stand 
+	 against the physical damage. 
+	
+Q4. Centralized VCS ?
+Ans. We can push or pull our project files from the centralized db.
+
+Q5. Distributed VCS  ?
+Ans. 
+
+Git Features:
+Git help us to maintain integrity with checksum.
+<#2 Installation>
+<Commands>
+$ git config --global user.name "AnirudhPundir"
+$ git config --global user.email "anirudhpundir007@gmail.com"
+$ git config user.name
+AnirudhPundir
+$ git config --list
+</Commands>
+</ #2 Installation>
+<#3 Git: Three Stage Architecture>
+<Q1. Commit ?>
+To take a snapshot of the completed work.
+</ Q1. Commit>
+<Q2. Staging>
+An area/phase where we keep the files that are ready to be commited.  
+We require a stage 'cuz for ex if we create a website consisting of three components
+lets say one.html,one.css,one.js and if we made some changes in the html n css files
+nd we were not able to make some changes in the js file we'll commit the html nd css
+file so that atleast changes related to designing/decoratig part can be updated to 
+site. 
+We can even directly commit the files. 
+</Q2. Staging>
+</ #3 Git: Three Stage Architecture>
+	
+<#4 Tracking Our first project>	
+
+<Q1. git status>
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Git1.txt
+        Git1pics.docx
+        ~$t1pics.docx
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+</Q1. git status>
+<Q2. git init>
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git
+$ git init
+Initialized empty Git repository in F:/Tutorials notes/Git/.git/
+Hence now the directory has been initialized as a .git.
+</Q2. git init>
+<Q3. Git add --a>
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git add --a
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   Git1.txt
+        new file:   Git1pics.docx
+        new file:   ~$t1pics.docx
+Now all the files in the current terminal are in staging process.
+</Q3. git add --a>
+<Q4. git commit>
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git commit -m
+error: switch `m' requires a value
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git commit -m "Commit #1: Nothing Special"
+[master (root-commit) 4de3c41] Commit #1: Nothing Special
+ 3 files changed, 86 insertions(+)
+ create mode 100644 Git1.txt
+ create mode 100644 Git1pics.docx
+ create mode 100644 ~$t1pics.docx
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Git1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git log
+commit 4de3c4155b4679e4a2af39657950e44b66ffaa01 (HEAD -> master)
+Author: AnirudhPundir <anirudhpundir007@gmail.com>
+Date:   Sun Jan 19 09:31:20 2020 -0800
+
+    Commit #1: Nothing Special
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git add --a
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git commit -m "Commit #3: Nothing Special"
+[master 5cc3261] Commit #3: Nothing Special
+ 2 files changed, 49 insertions(+)
+ delete mode 100644 ~$t1pics.docx
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git log
+commit 5cc326148d29c3bddf17d572c8a810bb1db719d6 (HEAD -> master)
+Author: AnirudhPundir <anirudhpundir007@gmail.com>
+Date:   Sun Jan 19 09:35:00 2020 -0800
+
+    Commit #3: Nothing Special
+
+commit 4de3c4155b4679e4a2af39657950e44b66ffaa01
+Author: AnirudhPundir <anirudhpundir007@gmail.com>
+Date:   Sun Jan 19 09:31:20 2020 -0800
+
+    Commit #1: Nothing Special
+
+</Q4. git commit>
+<Commit #4>
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Git1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git add --a
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git commit -m
+error: switch `m' requires a value
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git commit -m "Commit #4: Changes made in the Git1.txt"
+[master d93e1ee] Commit #4: Changes made in the Git1.txt
+ 1 file changed, 29 insertions(+)
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git log
+commit d93e1ee5b796633229642bdd2b301faa2b7cbc86 (HEAD -> master)
+Author: AnirudhPundir <anirudhpundir007@gmail.com>
+Date:   Sun Jan 19 09:38:11 2020 -0800
+
+    Commit #4: Changes made in the Git1.txt
+
+commit 5cc326148d29c3bddf17d572c8a810bb1db719d6
+Author: AnirudhPundir <anirudhpundir007@gmail.com>
+Date:   Sun Jan 19 09:35:00 2020 -0800
+
+    Commit #3: Nothing Special
+
+commit 4de3c4155b4679e4a2af39657950e44b66ffaa01
+Author: AnirudhPundir <anirudhpundir007@gmail.com>
+Date:   Sun Jan 19 09:31:20 2020 -0800
+
+    Commit #1: Nothing Special
+
+</Commit #4>
+<Commit #5>
+Just for making changes in one file:
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git add Git1.txt
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git commit -m "Commit #5 : Only changed git1.txt"
+[master 96d6716] Commit #5 : Only changed git1.txt
+ 1 file changed, 53 insertions(+)
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git log
+commit 96d67165241f80e4889d05b8979704cf312b6168 (HEAD -> master)
+Author: AnirudhPundir <anirudhpundir007@gmail.com>
+Date:   Sun Jan 19 09:47:30 2020 -0800
+
+    Commit #5 : Only changed git1.txt
+
+commit d93e1ee5b796633229642bdd2b301faa2b7cbc86
+Author: AnirudhPundir <anirudhpundir007@gmail.com>
+Date:   Sun Jan 19 09:38:11 2020 -0800
+
+    Commit #4: Changes made in the Git1.txt
+
+commit 5cc326148d29c3bddf17d572c8a810bb1db719d6
+Author: AnirudhPundir <anirudhpundir007@gmail.com>
+Date:   Sun Jan 19 09:35:00 2020 -0800
+
+    Commit #3: Nothing Special
+
+commit 4de3c4155b4679e4a2af39657950e44b66ffaa01
+Author: AnirudhPundir <anirudhpundir007@gmail.com>
+Date:   Sun Jan 19 09:31:20 2020 -0800
+
+    Commit #1: Nothing Special
+
+</Commit #5>
+</#4 Tracking Our first project>
+   
+ <#5 Cloning a repository Git from github>
+ <Commands>
+ 1.rm -rf .git : It is used for deleting the git repository on our local System.
+ Syntax :
+ Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+ $ rm -rf .git
+ 2.Clone <link> name(optional): It is used to copy a git repository from github.
+ Syntax:
+ Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+ $ git clone https://github.com/AnirudhPundir/ThinkTech_JOB_PORTAL.git
+ Cloning into 'ThinkTech_JOB_PORTAL'...
+ warning: You appear to have cloned an empty repository.
+ 3. ls : It helps in knowing what files and directories are present the current git 
+ repository.
+ Syntax:
+ Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+ $ ls
+ Git1.txt  Git1pics.docx 
+ </Commands>
+ </ #5 Cloning a Git repository from github>
+ 
+ <#6 Git:File LifeCycle Status>
+ Intially when a folder is changed into a git repository ,the files are unstructured 
+ then once we run the $git add --a all the files comes into unmodified state , which 
+ then goes to modified state when some changes are made into the files then again after 
+ running the $git add --a / $git add gt1.txt then the files come into a stage state,
+ after which we run the commit command and the files goes to again unmodified state.
+ 
+ Code :
+ 
+ Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Git1.txt
+        modified:   Git1pics.docx
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Git1pics.docx_Picture 1.png
+        Git1pics.docx_Picture 1_2.png
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git add --a
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Git1.txt
+        modified:   Git1pics.docx
+        new file:   Git1pics.docx_Picture 1.png
+        new file:   Git1pics.docx_Picture 1_2.png
+
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Git1.txt
+        modified:   Git1pics.docx
+        new file:   Git1pics.docx_Picture 1.png
+        new file:   Git1pics.docx_Picture 1_2.png
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Git1pics.docx
+
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git add Git1pics.docx
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Git1.txt
+        modified:   Git1pics.docx
+        new file:   Git1pics.docx_Picture 1.png
+        new file:   Git1pics.docx_Picture 1_2.png
+
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git add Git1pics.docx
+
+ </ #6 Git:File LifeCycle Status>
+
+<#7 GitIgnore>
+	<commands>
+	1.Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+	$ touch ex1
+	2.Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+	$ touch .gitignore
+	3.Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+	$ git status
+	On branch master
+	Changes to be committed:
+	  (use "git restore --staged <file>..." to unstage)
+       	 modified:   Git1.txt
+       	 modified:   Git1pics.docx
+       	 new file:   Git1pics.docx_Picture 1.png
+       	 new file:   Git1pics.docx_Picture 1_2.png
+
+	Changes not staged for commit:
+	  (use "git add/rm <file>..." to update what will be committed)
+	  (use "git restore <file>..." to discard changes in working directory)
+	        modified:   Git1.txt
+	        modified:   Git1pics.docx
+	        deleted:    Git1pics.docx_Picture 1.png
+	        deleted:    Git1pics.docx_Picture 1_2.png
+
+	Untracked files:
+	  (use "git add <file>..." to include in what will be committed)
+	        .gitignore
+	        ex1
+	        ~$t1pics.docx
+	4.
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+	$ git status
+	On branch master
+	Changes to be committed:
+  	(use "git restore --staged <file>..." to unstage)
+        	modified:   Git1.txt
+       	 modified:   Git1pics.docx
+        	new file:   Git1pics.docx_Picture 1.png
+       	 new file:   Git1pics.docx_Picture 1_2.png
+
+	Changes not staged for commit:
+ 	 (use "git add/rm <file>..." to update what will be committed)
+  	(use "git restore <file>..." to discard changes in working directory)
+       	 modified:   Git1.txt
+       	 modified:   Git1pics.docx
+        	deleted:    Git1pics.docx_Picture 1.png
+        	deleted:    Git1pics.docx_Picture 1_2.png
+
+	Untracked files:
+ 	 (use "git add <file>..." to include in what will be committed)
+        	.gitignore
+       	 ~$t1pics.docx
+	5.
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git add --a
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git commit -m "Added gitignore and ignored ex1"
+[master 598132c] Added gitignore and ignored ex1
+ 4 files changed, 138 insertions(+), 1 deletion(-)
+ create mode 100644 .gitignore
+ rewrite Git1pics.docx (81%)
+ create mode 100644 ~$t1pics.docx
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+	6.// IGNORING MORE THAN ONE FILE
+	Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ touch hey1.boy
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ touch hey2.boy
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ touch hey3.boy
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Git1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hey1.boy
+        hey2.boy
+        hey3.boy
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+        modified:   Git1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git add --a
+
+Anirudh@DESKTOP-CJLKEV1 MINGW64 /f/Tutorials notes/Git (master)
+$ git commit -m "Folder all the with .boy in the end were succesfully ignored"
+[master 64244cd] Folder all the with .boy in the end were succesfully ignored
+ 2 files changed, 12 insertions(+), 6 deletions(-)
+
+
+	</comands>
+	For ignoring a particular file we'll 1st create a file .gitignore in the git repo.
+	For ignoring a particular set of files one can just write *.<something>  and all the files will be 
+	deleted.
+	For ignoring directories one can write dir/ or /dir/ if the there are mutliple directories one inside 	another if .
+	after doing these changes one has to stage and commit the .gitignore files to observe the 	changes.
+	Note : We can als2o use ignore in more complex form to ignore particular which deep inside diff 	folders.  
+
+ 
+</#7 GitIgnore>
+<Git Diff: Showing Changes Between Commits/Staging Area & Working Directory | Git Tutorials #8>
+1. Git diff : it compares the changes b/w not staged and not commited.
+2. Once the files are staged then if use the diff command there will no differences shown hence 
+3. git diff --staged  : this command is used for seeing the difference b/w the last commit and the last stage.
+It tells us about all the stuff which we had done since the last commit.  
+</Git Diff: Showing Changes Between Commits/Staging Area & Working Directory | Git Tutorials #8>
+
+<Git: Skipping The Staging Area | Git Tutorials #9>
+1. $ git commit -a -m "Direct Commit":it will directly commit the changes made in the files but will do nothing about the untracked files as shown in the SS.
+2. Press q while u hit the pager.
+</Git: Skipping The Staging Area | Git Tutorials #9>
+
+<Moving and Renaming Files In Git | Git Tutorials #10>
+1. Whenever u explicitly rename a file then the git will show the name with the prevois file was deleted and a new file is created .
+2. after the staging it'll show that the file was renamed.
+3. "git rm filename" is used for removing the file from the directory and even the changes are staged automatically.
+4. "git mv old new" is used for renaming the file and like git rm it also stages the chnges itself.
+5. if you add a file to your ".gitignore" and then if you stage and commit the bash acc. now if any chnages are made to the added file they shouldn't be tracked but if you do , then the modifications will be shown ,hence for untracking a particular file we'll use the "git rm --cached filename".
+6. hence after running the above command it looks like the was deleted but it didn't it is still there now .  
+</Moving and Renaming Files In Git | Git Tutorials #10>
+
+<Git Log: Viewing & Changing Commits In Git | Git Tutorials #11>
+1. $rm -rf .git  : this command is used for deleting a local git directory.
+</Git Log: Viewing & Changing Commits In Git | Git Tutorials #11>
