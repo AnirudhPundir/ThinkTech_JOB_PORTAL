@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 hey this is anirudh
+=======
+This is anirudh and i am feeling good
+>>>>>>> develop

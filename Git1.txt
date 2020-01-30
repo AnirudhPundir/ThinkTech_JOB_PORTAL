@@ -518,6 +518,7 @@ This command will convert status command to st.
 2. $ git st
 On branch master
 Your branch is up to date with 'origin/master'.
+<<<<<<< HEAD
 
 nothing to commit, working tree clean
 3. Basically we are changing commands acc.
@@ -530,3 +531,10 @@ be affected.
 3. $git checkout master : will switch to next branch.
 4. If we make some changes on one branch it wont affect the other branch. 
 </Git: Creating & Switching Branches In Git | Git Tutorials #15>
+=======
+
+nothing to commit, working tree clean
+3. Basically we are changing commands acc.
+
+</Setting Alias In Git | Git Tutorials #14>
+>>>>>>> develop
