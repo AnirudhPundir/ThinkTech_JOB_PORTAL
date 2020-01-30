@@ -503,6 +503,11 @@ file.
 a editor.
 </Git Log: Viewing & Changing Commits In Git | Git Tutorials #11>
 <Unstaging & Unmodifying Files In Git | Git Tutorials #12>
-1. $ git restore --staged Git1.txt: it will unstage a file.
-
+1. $ git restore --staged Git1.txt: it will unstage a file.								
+2. $ git checkout -- jk.txt : it will bring the changes back to the original file.
+3. $ git changes -f : it will bring all changes made before the last add.
 </Unstaging & Unmodifying Files In Git | Git Tutorials #12>
+<GitHub: Working with Remote Repositories | Git Tutorials #13>
+1. $ git remote add origin https://github.com/AnirudhPundir/ThinkTech_JOB_PORTAL.git
+
+</GitHub: Working with Remote Repositories | Git Tutorials #13>
