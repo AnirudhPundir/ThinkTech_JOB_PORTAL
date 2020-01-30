@@ -508,6 +508,25 @@ a editor.
 3. $ git changes -f : it will bring all changes made before the last add.
 </Unstaging & Unmodifying Files In Git | Git Tutorials #12>
 <GitHub: Working with Remote Repositories | Git Tutorials #13>
-1. $ git remote add origin https://github.com/AnirudhPundir/ThinkTech_JOB_PORTAL.git
-
+1. $ git remote add origin https://github.com/AnirudhPundir/ThinkTech_JOB_PORTAL.gitgit remote add origin https://github.com/AnirudhPundir/newrepo.git
+2. $ git remote -v 
+3. $ git push -u origin master
 </GitHub: Working with Remote Repositories | Git Tutorials #13>
+<Setting Alias In Git | Git Tutorials #14>
+1. $ git config --global alias.st status:
+This command will convert status command to st.
+2. $ git st
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+3. Basically we are changing commands acc.
+
+</Setting Alias In Git | Git Tutorials #14>
+<Git: Creating & Switching Branches In Git | Git Tutorials #15>
+1. Creating a new branch so that from the master branch so that the master branch wont
+be affected.
+2. $git checkout -d develop : will create a new branch.
+3. $git checkout master : will switch to next branch.
+4. If we make some changes on one branch it wont affect the other branch. 
+</Git: Creating & Switching Branches In Git | Git Tutorials #15>
